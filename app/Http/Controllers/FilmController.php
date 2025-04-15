@@ -73,7 +73,7 @@ class FilmController extends Controller
 
         $film->update($data);
 
-        return redirect()->route('films.index', $film->id)->with('success','Film updated successfully');
+        return redirect()->route('films.index')->with('success','Film updated successfully');
     }
 
     /**
