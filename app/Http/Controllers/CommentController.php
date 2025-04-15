@@ -46,6 +46,8 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment)
     {
+        $comment->load('user');
+        
         if($comment->user_id !== auth()->id()) 
         {
             abort(403, 'Вы не можете удалить этот комментарий');
